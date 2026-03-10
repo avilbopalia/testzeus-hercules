@@ -12,9 +12,9 @@ These instructions are for linux base systems. (Linux, MacOS, BSD, etc.)
 ## Setting up your own fork of this repo.
 
 - On github interface click on `Fork` button.
-- Clone your fork of this repo. `git clone git@github.com:YOUR_GIT_USERNAME/testzeus-hercules.git`
-- Enter the directory `cd testzeus-hercules`
-- Add upstream repo `git remote add upstream https://github.com/test-zeus-ai/testzeus-hercules`
+- Clone your fork of this repo. `git clone git@github.com:YOUR_GIT_USERNAME/smart-ai-tester.git`
+- Enter the directory `cd smart-ai-tester`
+- Add upstream repo `git remote add upstream https://github.com/test-zeus-ai/smart-ai-tester`
 
 ## Setting up your own virtual environment
 
@@ -85,10 +85,10 @@ watch:            ## Run tests on every change.
 clean:            ## Clean unused files.
 virtualenv:       ## Create a virtual environment.
 release:          ## Create a new tag for release.
-build:       ## build testzeus_hercules.
+build:       ## build smart_ai_tester.
 publish:          ## Publish the package to PyPI.
-run:       ## run testzeus_hercules.
-run-interactive:       ## run-interactive testzeus_hercules.
+run:       ## run smart_ai_tester.
+run-interactive:       ## run-interactive smart_ai_tester.
 setup-poetry:       ## setup poetry.
 docker-build:       ## build and tag docker image.
 docker-publish:          ## Publish the package to Docker registry.

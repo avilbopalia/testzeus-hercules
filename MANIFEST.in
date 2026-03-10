@@ -3,4 +3,4 @@ include HISTORY.md
 include README.md
 include Containerfile
 graft tests
-graft testzeus_hercules
+graft smart_ai_tester

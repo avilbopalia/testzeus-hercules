@@ -25,20 +25,20 @@ install:          ## Install the project in dev mode.
 
 .PHONY: fmt
 fmt:              ## Format code using black & isort.
-	uv run isort testzeus_hercules/
-	uv run black -l 200 testzeus_hercules/
+	uv run isort smart_ai_tester/
+	uv run black -l 200 smart_ai_tester/
 	uv run black -l 200 tests/
 
 .PHONY: lint
 lint: fmt             ## Run pep8, black, mypy linters.
-	uv run black -l 200 --check testzeus_hercules/
+	uv run black -l 200 --check smart_ai_tester/
 	uv run black -l 200 --check tests/
-	# uv run mypy --ignore-missing-imports testzeus_hercules/
+	# uv run mypy --ignore-missing-imports smart_ai_tester/
 
 .PHONY: test
 test: lint        ## Run tests and generate coverage report.
 	uv run playwright install --with-deps
-	uv run pytest -v --junit-xml=tests/test_output.xml --cov-config .coveragerc --cov=testzeus_hercules -l --tb=short --maxfail=1 tests/
+	uv run pytest -v --junit-xml=tests/test_output.xml --cov-config .coveragerc --cov=smart_ai_tester -l --tb=short --maxfail=1 tests/
 	uv run coverage xml
 	uv run coverage html
 
@@ -107,7 +107,7 @@ release: ## Create a new tag for release.
 	)
 
 .PHONY: build
-build:       ## build testzeus_hercules.
+build:       ## build smart_ai_tester.
 	uv build
 
 .PHONY: publish
@@ -123,13 +123,13 @@ HOMEBREW_CERT := /opt/homebrew/etc/openssl@3/cert.pem
 SSL_ENV := $(if $(wildcard $(HOMEBREW_CERT)),SSL_CERT_FILE=$(HOMEBREW_CERT) REQUESTS_CA_BUNDLE=$(HOMEBREW_CERT),)
 
 .PHONY: run
-run:       ## run testzeus_hercules.
-	$(SSL_ENV) ENABLE_UBLOCK_EXTENSION=false uv run python testzeus_hercules
+run:       ## run smart_ai_tester.
+	$(SSL_ENV) ENABLE_UBLOCK_EXTENSION=false uv run python smart_ai_tester
 
 
 .PHONY: run-interactive
-run-interactive:       ## run-interactive testzeus_hercules.
-	$(SSL_ENV) uv run python -m testzeus_hercules.interactive
+run-interactive:       ## run-interactive smart_ai_tester.
+	$(SSL_ENV) uv run python -m smart_ai_tester.interactive
 
 .PHONY: setup-uv
 setup-uv:       ## setup uv.
@@ -137,12 +137,12 @@ setup-uv:       ## setup uv.
 
 .PHONY: docker-build
 docker-build:       ## build and tag docker image.
-	docker build -t testzeus/hercules .
+	docker build -t smartaitester/smart-ai-tester .
 	@VERSION=$$(grep -E '^version = ' pyproject.toml | sed 's/version = "\(.*\)"/\1/') && \
-	docker tag testzeus/hercules testzeus/hercules:$${VERSION}
+	docker tag smartaitester/smart-ai-tester smartaitester/smart-ai-tester:$${VERSION}
 
 .PHONY: docker-publish
 docker-publish:          ## Publish the package to Docker registry.
 	@VERSION=$$(grep -E '^version = ' pyproject.toml | sed 's/version = "\(.*\)"/\1/') && \
-	docker push testzeus/hercules:$${VERSION}
-	docker push testzeus/hercules:latest
+	docker push smartaitester/smart-ai-tester:$${VERSION}
+	docker push smartaitester/smart-ai-tester:latest

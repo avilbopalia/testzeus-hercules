@@ -116,7 +116,7 @@ result = {
 Run the test script to verify GPT-5 support:
 
 ```bash
-cd testzeus-hercules
+cd smart-ai-tester
 python test_gpt5_support.py
 ```
 

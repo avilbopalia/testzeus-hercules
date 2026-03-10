@@ -1,7 +1,7 @@
 [project]
-name = "testzeus-hercules"
+name = "smart-ai-tester"
 version = "0.2.0"
-description = "Hercules: The World's First Open-Source AI Agent for End-to-End Testing"
+description = "SmartAITester: The World's First Open-Source AI Agent for End-to-End Testing"
 authors = [{ name = "Shriyansh Agnihotri", email = "shriyansh@testzeus.com" }]
 requires-python = ">=3.11,<3.14"
 readme = "README.md"
@@ -9,8 +9,7 @@ keywords = [
     "AI",
     "end-to-end testing",
     "automation",
-    "Hercules",
-    "TestZeus",
+    "SmartAITester",
 ]
 classifiers = [
     "Programming Language :: Python :: 3",
@@ -55,12 +54,12 @@ dependencies = [
 ]
 
 [project.urls]
-Homepage = "https://testzeus.com/hercules"
-Repository = "https://github.com/testzeus/testzeus-hercules"
-Documentation = "https://testzeus.com/hercules/docs"
+Homepage = "https://github.com/avilbopalia/testzeus-hercules"
+Repository = "https://github.com/avilbopalia/testzeus-hercules"
+Documentation = "https://github.com/avilbopalia/testzeus-hercules/blob/main/README.md"
 
 [project.scripts]
-testzeus-hercules = "testzeus_hercules.__main__:main"
+smart-ai-tester = "smart_ai_tester.__main__:main"
 
 [dependency-groups]
 dev = [
@@ -79,10 +78,10 @@ dev = [
 ]
 
 [tool.setuptools]
-packages = ["testzeus_hercules"]
+packages = ["smart_ai_tester"]
 
 [tool.setuptools.package-data]
-testzeus_hercules = ["py.typed"]
+smart_ai_tester = ["py.typed"]
 
 [build-system]
 requires = ["setuptools>=61.0", "wheel"]

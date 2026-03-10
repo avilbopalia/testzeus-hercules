@@ -14,15 +14,15 @@ if { [ -z "$LLM_MODEL_NAME" ] || [ -z "$LLM_MODEL_API_KEY" ]; } && \
     exit 1
 fi
 
-# Check for the /testzeus-hercules/opt directory and set up test case if it doesn't exist
-if [ ! -d "/testzeus-hercules/opt" ]; then
-  echo "Warning: /testzeus-hercules/opt directory is not found. This means the results will be displayed in logs, and a sample test case will be executed."
-  mkdir -p /testzeus-hercules/opt/input /testzeus-hercules/opt/test_data
-  echo "Feature: Open Google homepage\nScenario: User opens Google homepage\n  Given I have a web browser open\n  When I navigate to https://www.google.com\n  Then I should see the Google homepage" > /testzeus-hercules/opt/input/test.feature
-  touch /testzeus-hercules/opt/test_data/td.txt
+# Check for the /smart-ai-tester/opt directory and set up test case if it doesn't exist
+if [ ! -d "/smart-ai-tester/opt" ]; then
+  echo "Warning: /smart-ai-tester/opt directory is not found. This means the results will be displayed in logs, and a sample test case will be executed."
+  mkdir -p /smart-ai-tester/opt/input /smart-ai-tester/opt/test_data
+  echo "Feature: Open Google homepage\nScenario: User opens Google homepage\n  Given I have a web browser open\n  When I navigate to https://www.google.com\n  Then I should see the Google homepage" > /smart-ai-tester/opt/input/test.feature
+  touch /smart-ai-tester/opt/test_data/td.txt
 fi
 
 export AUTO_MODE=1
 
 # Execute the main application
-exec uv run python testzeus_hercules
+exec uv run python smart_ai_tester

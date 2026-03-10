@@ -3,9 +3,9 @@
 
 # 💪 Hercules
 
-[![PyPI Total Downloads](https://static.pepy.tech/badge/testzeus-hercules)](https://pepy.tech/projects/testzeus-hercules)
-![Docker Pulls](https://img.shields.io/docker/pulls/testzeus/hercules)
-[![CI Test](https://github.com/test-zeus-ai/testzeus-hercules/actions/workflows/main-test.yml/badge.svg)](https://github.com/test-zeus-ai/testzeus-hercules/actions/workflows/main-test.yml)
+[![PyPI Total Downloads](https://static.pepy.tech/badge/smart-ai-tester)](https://pepy.tech/projects/smart-ai-tester)
+![Docker Pulls](https://img.shields.io/docker/pulls/smartaitester/smart-ai-tester)
+[![CI Test](https://github.com/test-zeus-ai/smart-ai-tester/actions/workflows/main-test.yml/badge.svg)](https://github.com/test-zeus-ai/smart-ai-tester/actions/workflows/main-test.yml)
 [![Slack](https://img.shields.io/badge/slack-TestZeus-brightgreen.svg?logo=slack)](https://join.slack.com/t/testzeuscommunityhq/shared_invite/zt-376oeo99x-3RAWe_C0H7x9zP0rtACcPA)
 
 Testing modern web applications can be difficult, with frequent changes and complex features making it hard to keep up. That's where **Hercules** comes in. Hercules is the world's first open-source testing agent, built to handle the toughest testing tasks so you don't have to. It turns simple, easy-to-write Gherkin steps into fully automated **end to end** tests—no coding skills needed. Whether you're working with tricky platforms like Salesforce or running tests in your CI/CD pipeline, Hercules adapts to your needs and takes care of the details. With Hercules, testing becomes simple, reliable, and efficient, helping teams everywhere deliver better software. Here's a quick demo of lead creation using natural english language test (without any code):
@@ -24,13 +24,13 @@ Our mission? To **democratize and disrupt test automation**, making top-tier tes
 ### Video Tutorials: [@TestZeus](https://www.youtube.com/@TestZeus)
 ---
 
-#### 🚀 **Getting Started with TestZeus Hercules**
-- **Introduction to TestZeus Hercules**  
-  Learn about the core features of TestZeus Hercules and how it can streamline end-to-end testing for your projects. 
+#### 🚀 **Getting Started with SmartAITester**
+- **Introduction to SmartAITester**  
+  Learn about the core features of SmartAITester and how it can streamline end-to-end testing for your projects. 
    [![Autonomous execution with Hercules](statics/assets/introvideothumbnail2.png)](https://youtu.be/_m_NDjM6aZ0?si=ArtVKz8uSgGWTcAK)
 
 - **Installation and Setup Guide**  
-  Step-by-step instructions for installing and configuring TestZeus Hercules in your environment.  
+  Step-by-step instructions for installing and configuring SmartAITester in your environment.  
   _[Watch now](https://youtu.be/9D-SZGoDrfc?si=GL0IArWkB1ZgBdx5)_
 
 ---
@@ -120,7 +120,7 @@ If you are new to the Python ecosystem and don't know where to begin, dont worry
 
 For a quick taste of the solution, you can try the notebook here: 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1YiZsXem1POTwkcr17QqflXnihhuSqwM2?usp=sharing)
-- **Note**: Colab might ask you to restart the session as python3.11 and some libs are installed during the installation of testzeus-hercules. Please restart the session if required and continue the execution. Also , we recommend one of the approaches below for getting the full flavor of the solution. 
+- **Note**: Colab might ask you to restart the session as python3.11 and some libs are installed during the installation of smart-ai-tester. Please restart the session if required and continue the execution. Also , we recommend one of the approaches below for getting the full flavor of the solution. 
 
 ### Approach 1: Using PyPI Package
 
@@ -129,7 +129,7 @@ For a quick taste of the solution, you can try the notebook here:
 Install Hercules from PyPI:
 
 ```bash
-pip install testzeus-hercules
+pip install smart-ai-tester
 ```
 
 Hercules uses Playwright to interact with web pages, so you need to install Playwright and its dependencies:
@@ -188,7 +188,7 @@ For a complete list of environment variables, see our [Environment Variables Gui
 After passing all the required parameters, the command to run Hercules should look like this:
 
 ```bash
-testzeus-hercules --input-file opt/input/test.feature --output-path opt/output --test-data-path opt/test_data --llm-model gpt-4o --llm-model-api-key sk-proj-k.......
+smart-ai-tester --input-file opt/input/test.feature --output-path opt/output --test-data-path opt/test_data --llm-model gpt-4o --llm-model-api-key sk-proj-k.......
 ```
 
 
@@ -218,13 +218,13 @@ To set up and run Hercules on a Windows machine:
 5. **Run Hercules:**
    - Once the setup is complete, you can run Hercules from PowerShell or Command Prompt using the following command:
      ```bash
-     testzeus-hercules --input-file opt/input/test.feature --output-path opt/output --test-data-path opt/test_data --llm-model gpt-4o --llm-model-api-key sk-proj-k.......
+     smart-ai-tester --input-file opt/input/test.feature --output-path opt/output --test-data-path opt/test_data --llm-model gpt-4o --llm-model-api-key sk-proj-k.......
      ```
 
 ---
 
 
-#### Supported AI Models for TestZeus-Hercules
+#### Supported AI Models for SmartAITester
 - Anthropic: Compatible with Haiku 3.5 and above.
 - Groq: Supports any version with function calling and coding capabilities.
 - Mistral: Supports any version with function calling and coding capabilities. Mistral-large, Mistral-medium. Only heavey models.
@@ -339,7 +339,7 @@ For all the scale lovers, Hercules is also available as a Docker image.
 #### Pull the Docker Image
 
 ```bash
-docker pull testzeus/hercules:latest
+docker pull smartaitester/smart-ai-tester:latest
 ```
 
 #### Running Hercules in Docker
@@ -348,9 +348,9 @@ Run the container using:
 
 ```bash
 docker run --env-file=.env \
-  -v ./agents_llm_config.json:/testzeus-hercules/agents_llm_config.json \
-  -v ./opt:/testzeus-hercules/opt \
-  --rm -it testzeus/hercules:latest
+  -v ./agents_llm_config.json:/smart-ai-tester/agents_llm_config.json \
+  -v ./opt:/smart-ai-tester/opt \
+  --rm -it smartaitester/smart-ai-tester:latest
 ```
 
 - **Environment Variables**: All the required environment variables can be set by passing an `.env` file to the `docker run` command.
@@ -416,13 +416,13 @@ For the hardcore enthusiasts, you can use Hercules via the source code to get a 
 1. **Clone the Repository**
 
    ```bash
-   git clone git@github.com:test-zeus-ai/testzeus-hercules.git
+   git clone git@github.com:test-zeus-ai/smart-ai-tester.git
    ```
 
 2. **Navigate to the Directory**
 
    ```bash
-   cd testzeus-hercules
+   cd smart-ai-tester
    ```
 
 3. **Use Make Commands**
@@ -481,7 +481,7 @@ For the hardcore enthusiasts, you can use Hercules via the source code to get a 
 
 ### Approach 4: Setting Up via helper_script_custom.sh
 
-For those who want a fully automated setup experience on Linux/macOS environments, we provide a helper_script.sh. This script installs Python 3.11 (if needed), creates a virtual environment, installs TestZeus Hercules, and sets up the base project directories in an opt folder.
+For those who want a fully automated setup experience on Linux/macOS environments, we provide a helper_script.sh. This script installs Python 3.11 (if needed), creates a virtual environment, installs SmartAITester, and sets up the base project directories in an opt folder.
 
 #### Prerequisites
 
@@ -502,15 +502,15 @@ For those who want a fully automated setup experience on Linux/macOS environment
   # Activate the virtual environment
   source test/bin/activate
 
-  # Upgrade the 'testzeus-hercules' package
-  pip install --upgrade testzeus-hercules
+  # Upgrade the 'smart-ai-tester' package
+  pip install --upgrade smart-ai-tester
   playwright install --with-deps
 
   # create a new directory named 'opt'
   mkdir -p opt/input opt/output opt/test_data
 
-  # download https://raw.githubusercontent.com/test-zeus-ai/testzeus-hercules/refs/heads/main/agents_llm_config-example.json
-  curl -sS https://raw.githubusercontent.com/test-zeus-ai/testzeus-hercules/main/agents_llm_config-example.json > agents_llm_config-example.json
+  # download https://raw.githubusercontent.com/test-zeus-ai/smart-ai-tester/refs/heads/main/agents_llm_config-example.json
+  curl -sS https://raw.githubusercontent.com/test-zeus-ai/smart-ai-tester/main/agents_llm_config-example.json > agents_llm_config-example.json
   mv agents_llm_config-example.json agents_llm_config.json
 
   # prompt user that they need to edit the 'agents_llm_config.json' file, halt the script and open the file in an editor
@@ -520,8 +520,8 @@ For those who want a fully automated setup experience on Linux/macOS environment
   echo "The 'agents_llm_config.json' file is located at $(pwd)/agents_llm_config.json"
   read -p "Press Enter if file is updated"
 
-  # download https://raw.githubusercontent.com/test-zeus-ai/testzeus-hercules/blob/main/.env-example
-  curl -sS https://raw.githubusercontent.com/test-zeus-ai/testzeus-hercules/main/.env-example > .env-example
+  # download https://raw.githubusercontent.com/test-zeus-ai/smart-ai-tester/blob/main/.env-example
+  curl -sS https://raw.githubusercontent.com/test-zeus-ai/smart-ai-tester/main/.env-example > .env-example
   mv .env-example .env
 
   # prompt user that they need to edit the .env file, halt the script and open the file in an editor
@@ -529,14 +529,14 @@ For those who want a fully automated setup experience on Linux/macOS environment
   read -p "Press Enter if file is updated"
 
   # create an input/test.feature file
-  # download https://raw.githubusercontent.com/test-zeus-ai/testzeus-hercules/refs/heads/main/opt/input/test.feature and save in opt/input/test.feature
-  curl -sS https://raw.githubusercontent.com/test-zeus-ai/testzeus-hercules/main/opt/input/test.feature > opt/input/test.feature
+  # download https://raw.githubusercontent.com/test-zeus-ai/smart-ai-tester/refs/heads/main/opt/input/test.feature and save in opt/input/test.feature
+  curl -sS https://raw.githubusercontent.com/test-zeus-ai/smart-ai-tester/main/opt/input/test.feature > opt/input/test.feature
 
-  # download https://raw.githubusercontent.com/test-zeus-ai/testzeus-hercules/refs/heads/main/opt/test_data/test_data.json and save in opt/test_data/test_data.json
-  curl -sS https://raw.githubusercontent.com/test-zeus-ai/testzeus-hercules/main/opt/test_data/test_data.json > opt/test_data/test_data.json
+  # download https://raw.githubusercontent.com/test-zeus-ai/smart-ai-tester/refs/heads/main/opt/test_data/test_data.json and save in opt/test_data/test_data.json
+  curl -sS https://raw.githubusercontent.com/test-zeus-ai/smart-ai-tester/main/opt/test_data/test_data.json > opt/test_data/test_data.json
 
-  # Run the 'testzeus-hercules' command with the specified parameters
-  testzeus-hercules --project-base=opt
+  # Run the 'smart-ai-tester' command with the specified parameters
+  smart-ai-tester --project-base=opt
   ```
 2. **Make the Script Executable and Run**
 ```bash
@@ -545,19 +545,19 @@ chmod +x helper_script.sh
 ```
 -	The script will:
 	•	Create a Python 3.11 virtual environment named test.
-	•	Install testzeus-hercules and Playwright dependencies.
+	•	Install smart-ai-tester and Playwright dependencies.
 	•	Create the opt folder structure (for input/output/test data).
 	•	Download sample config files: agents_llm_config.json, .env, and example feature/test data files.
 	•	Important: You will be prompted to edit both agents_llm_config.json and .env files. After you've added your API keys and other custom configurations, press Enter to continue.
 
 3. **Script Output**
-	-	After completion, the script automatically runs testzeus-hercules --project-base=opt.
+	-	After completion, the script automatically runs smart-ai-tester --project-base=opt.
 	-	Your logs and results will appear in opt/output, opt/log_files, and opt/proofs.
 ---
 
 ## 📝 Configuration Details
 
-For a comprehensive guide to all environment variables and configuration options available in TestZeus Hercules, please refer to our [Environment Variables and Configuration Guide](docs/environment_variables.md). This document provides detailed information about core environment variables, LLM configuration, browser settings, testing configuration, device configuration, logging options, and more.
+For a comprehensive guide to all environment variables and configuration options available in SmartAITester, please refer to our [Environment Variables and Configuration Guide](docs/environment_variables.md). This document provides detailed information about core environment variables, LLM configuration, browser settings, testing configuration, device configuration, logging options, and more.
 
 ### Disabling Telemetry
 
@@ -788,7 +788,7 @@ GEO_PROVIDER=maps_co
 ```
 This allows Hercules to alter or simulate user location during test execution, broadening your test coverage for scenarios that rely on user geography.
 
-Note: If you are looking for native app test automation, we've got you covered, as we've built out early support for Appium powered native app automation [here](https://github.com/test-zeus-ai/testzeus-hercules/pull/41)
+Note: If you are looking for native app test automation, we've got you covered, as we've built out early support for Appium powered native app automation [here](https://github.com/test-zeus-ai/smart-ai-tester/pull/41)
 
 ---
 
@@ -1034,7 +1034,7 @@ We welcome contributions from the community!
 1. **Creating a New Tool**
 
    - You can start extending by adding tools to Hercules.
-   - Refer to `testzeus_hercules/core/tools/sql_calls.py` as an example of how to create a new tool.
+   - Refer to `smart_ai_tester/core/tools/sql_calls.py` as an example of how to create a new tool.
    - The key is the decorator `@tool` over the method that you want Hercules to execute.
    - The tool decorator should have a very clear description and name so that Hercules knows how to use the tool.
    - Also, in the method, you should be clear with annotations on what parameter is used for what purpose so that function calling in the LLM works best.
@@ -1046,7 +1046,7 @@ We welcome contributions from the community!
 
 3. **Direct Addition (Not Recommended)**
 
-   - In case you opt for adding the tools directly, then just put your new tools in the `testzeus_hercules/core/tools` path of the cloned repository.
+   - In case you opt for adding the tools directly, then just put your new tools in the `smart_ai_tester/core/tools` path of the cloned repository.
 
    - **Note**: This way is not recommended. We prefer you try to use the `ADDITIONAL_TOOL_DIRS` approach.
 
@@ -1092,7 +1092,7 @@ If you're coming from a **Java** or **JavaScript** background, working with Pyth
 
 In Java, you might use tools like Maven or Gradle to manage project dependencies, or in JavaScript, you'd use `npm` or `yarn`. In Python, **virtual environments** serve a similar purpose. They allow you to create isolated spaces for your project's dependencies, avoiding conflicts with other Python projects on your system.
 
-Think of it like a sandboxed environment where TestZeus Hercules and its dependencies live independently from other Python packages.
+Think of it like a sandboxed environment where SmartAITester and its dependencies live independently from other Python packages.
 
 
 ### 🏗️ **Setup Instructions**
@@ -1107,7 +1107,7 @@ python --version
 python3 --version
 ```
 
-If Python isn't installed, [download it here](https://www.python.org/downloads/) or if you are on Windows, just follow the instructions [here](https://github.com/test-zeus-ai/testzeus-hercules/#%EF%B8%8F-running-hercules-on-a-windows-machine).
+If Python isn't installed, [download it here](https://www.python.org/downloads/) or if you are on Windows, just follow the instructions [here](https://github.com/test-zeus-ai/smart-ai-tester/#%EF%B8%8F-running-hercules-on-a-windows-machine).
 
 ---
 
@@ -1136,39 +1136,39 @@ deactivate
 
 ---
 
-#### 📥 **3. Installing TestZeus Hercules**
+#### 📥 **3. Installing SmartAITester**
 
-Once your virtual environment is activated, install the latest version of TestZeus Hercules directly from PyPI:
+Once your virtual environment is activated, install the latest version of SmartAITester directly from PyPI:
 
 ```bash
-pip install testzeus-hercules
+pip install smart-ai-tester
 ```
 
 ---
 
-#### 🔄 **4. Updating TestZeus Hercules**
+#### 🔄 **4. Updating SmartAITester**
 
 To update to the latest version, use:
 
 ```bash
-pip install --upgrade testzeus-hercules
+pip install --upgrade smart-ai-tester
 ```
 
 ---
 
-#### ❌ **5. Uninstalling TestZeus Hercules**
+#### ❌ **5. Uninstalling SmartAITester**
 
 If you need to remove the package:
 
 ```bash
-pip uninstall testzeus-hercules
+pip uninstall smart-ai-tester
 ```
 
 ---
 
 #### 🔍 **6. Checking Installed Packages**
 
-To verify that TestZeus Hercules is installed and check its version:
+To verify that SmartAITester is installed and check its version:
 
 ```bash
 pip list
@@ -1185,23 +1185,23 @@ pip list
 
 ### 💡 **Next Steps**
 
-Now that TestZeus Hercules is installed and ready to go, dive into [our documentation](https://github.com/test-zeus-ai/testzeus-hercules/) to learn how to create and run your first test cases with ease!
+Now that SmartAITester is installed and ready to go, dive into [our documentation](https://github.com/test-zeus-ai/smart-ai-tester/) to learn how to create and run your first test cases with ease!
 
 ---
 
 ## Star History
 
-[![Star History Chart](https://api.star-history.com/svg?repos=test-zeus-ai/testzeus-hercules&type=Date)](https://star-history.com/#test-zeus-ai/testzeus-hercules&Date)
+[![Star History Chart](https://api.star-history.com/svg?repos=test-zeus-ai/smart-ai-tester&type=Date)](https://star-history.com/#test-zeus-ai/smart-ai-tester&Date)
 
 ## ✅ Citation
 If you use Hercules in your research or project, please cite:
 
 ```
-@software{testzeus_hercules2024,
+@software{smart_ai_tester2024,
   author = {Agnihotri, Shriyansh and Gupta, Robin},
   title = {Hercules: World's first open source testing agent},
   year = {2024},
   publisher = {GitHub},
-  url = {https://github.com/test-zeus-ai/testzeus-hercules/}
+  url = {https://github.com/test-zeus-ai/smart-ai-tester/}
 }
 ```

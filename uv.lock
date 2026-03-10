@@ -4826,6 +4826,115 @@ wheels = [
 ]
 
 [[package]]
+name = "smart-ai-tester"
+version = "0.2.0"
+source = { editable = "." }
+dependencies = [
+    { name = "ag2", extra = ["anthropic", "bedrock", "gemini", "groq", "lmm", "mcp", "openai"] },
+    { name = "aiofiles" },
+    { name = "aiohttp" },
+    { name = "chromadb" },
+    { name = "cryptography" },
+    { name = "fonttools" },
+    { name = "httpx" },
+    { name = "inflection" },
+    { name = "junit2html" },
+    { name = "junitparser" },
+    { name = "mcp" },
+    { name = "nest-asyncio" },
+    { name = "opentelemetry-proto" },
+    { name = "pillow" },
+    { name = "playwright" },
+    { name = "playwright-recaptcha" },
+    { name = "portkey-ai" },
+    { name = "protobuf" },
+    { name = "psutil" },
+    { name = "pydantic" },
+    { name = "pypdf" },
+    { name = "python-dotenv" },
+    { name = "python-json-logger" },
+    { name = "pyyaml" },
+    { name = "requests" },
+    { name = "sentence-transformers" },
+    { name = "sentry-sdk" },
+    { name = "sqlalchemy" },
+    { name = "starlette" },
+    { name = "torch" },
+    { name = "transformers" },
+    { name = "unstructured", extra = ["all-docs"] },
+    { name = "urllib3" },
+]
+
+[package.dev-dependencies]
+dev = [
+    { name = "black" },
+    { name = "coverage" },
+    { name = "deptry" },
+    { name = "gitchangelog" },
+    { name = "ipdb" },
+    { name = "isort" },
+    { name = "mkdocs" },
+    { name = "mypy" },
+    { name = "pytest" },
+    { name = "pytest-cov" },
+    { name = "pytest-rerunfailures" },
+    { name = "twine" },
+]
+
+[package.metadata]
+requires-dist = [
+    { name = "ag2", extras = ["lmm", "mcp", "openai", "groq", "bedrock", "anthropic", "gemini"], specifier = ">=0.10.0,<0.11" },
+    { name = "aiofiles", specifier = ">=24.1.0,<25" },
+    { name = "aiohttp", specifier = ">=3.13.2,<4" },
+    { name = "chromadb", specifier = ">=1.0.16,<2" },
+    { name = "cryptography", specifier = ">=46.0.5,<47" },
+    { name = "fonttools", specifier = ">=4.61.0,<5" },
+    { name = "httpx", specifier = ">=0.28.1,<0.29" },
+    { name = "inflection", specifier = ">=0.5.1,<0.6" },
+    { name = "junit2html", specifier = ">=31.0.2,<32" },
+    { name = "junitparser", specifier = ">=3.2.0,<4" },
+    { name = "mcp", specifier = ">=1.23.3,<2" },
+    { name = "nest-asyncio", specifier = ">=1.6.0,<2" },
+    { name = "opentelemetry-proto", specifier = ">=1.27.0" },
+    { name = "pillow", specifier = ">=12.1.1,<13" },
+    { name = "playwright", specifier = "<=1.49.0" },
+    { name = "playwright-recaptcha", specifier = ">=0.5.1,<0.6" },
+    { name = "portkey-ai", specifier = ">=1.11.1,<2" },
+    { name = "protobuf", specifier = ">=6.33.5,<7" },
+    { name = "psutil", specifier = ">=5.9.0,<6" },
+    { name = "pydantic", specifier = ">=2.6.2,<3" },
+    { name = "pypdf", specifier = ">=6.7.5,<7" },
+    { name = "python-dotenv", specifier = ">=1.0.0,<2" },
+    { name = "python-json-logger", specifier = ">=2.0.7,<3" },
+    { name = "pyyaml", specifier = ">=6.0.1,<7" },
+    { name = "requests", specifier = ">=2.32.5,<3" },
+    { name = "sentence-transformers", specifier = ">=3.4.1,<4" },
+    { name = "sentry-sdk", specifier = ">=2.18.0,<3" },
+    { name = "sqlalchemy", specifier = ">=2.0.36,<3" },
+    { name = "starlette", specifier = ">=0.50.0,<0.51" },
+    { name = "torch", specifier = ">=2.9.1,<3" },
+    { name = "transformers", specifier = ">=4.57.3,<5" },
+    { name = "unstructured", extras = ["all-docs"], specifier = ">=0.18.18,<0.19" },
+    { name = "urllib3", specifier = ">=2.6.1,<3" },
+]
+
+[package.metadata.requires-dev]
+dev = [
+    { name = "black", specifier = ">=24.10.0,<25" },
+    { name = "coverage", specifier = ">=7.6.4,<8" },
+    { name = "deptry", specifier = ">=0.21.0,<0.22" },
+    { name = "gitchangelog", specifier = ">=3.0.4,<4" },
+    { name = "ipdb", specifier = ">=0.13.13,<0.14" },
+    { name = "isort", specifier = ">=5.13.2,<6" },
+    { name = "mkdocs", specifier = ">=1.6.1,<2" },
+    { name = "mypy", specifier = ">=1.13.0,<2" },
+    { name = "pytest", specifier = ">=8.3.3,<9" },
+    { name = "pytest-cov", specifier = ">=6.0.0,<7" },
+    { name = "pytest-rerunfailures", specifier = ">=15.0,<16" },
+    { name = "twine", specifier = ">=5.1.1,<6" },
+]
+
+[[package]]
 name = "sniffio"
 version = "1.3.1"
 source = { registry = "https://pypi.org/simple" }
@@ -4962,115 +5071,6 @@ source = { registry = "https://pypi.org/simple" }
 sdist = { url = "https://files.pythonhosted.org/packages/46/79/cf31d7a93a8fdc6aa0fbb665be84426a8c5a557d9240b6239e9e11e35fc5/termcolor-3.3.0.tar.gz", hash = "sha256:348871ca648ec6a9a983a13ab626c0acce02f515b9e1983332b17af7979521c5", size = 14434, upload-time = "2025-12-29T12:55:21.882Z" }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/33/d1/8bb87d21e9aeb323cc03034f5eaf2c8f69841e40e4853c2627edf8111ed3/termcolor-3.3.0-py3-none-any.whl", hash = "sha256:cf642efadaf0a8ebbbf4bc7a31cec2f9b5f21a9f726f4ccbb08192c9c26f43a5", size = 7734, upload-time = "2025-12-29T12:55:20.718Z" },
-]
-
-[[package]]
-name = "testzeus-hercules"
-version = "0.2.0"
-source = { editable = "." }
-dependencies = [
-    { name = "ag2", extra = ["anthropic", "bedrock", "gemini", "groq", "lmm", "mcp", "openai"] },
-    { name = "aiofiles" },
-    { name = "aiohttp" },
-    { name = "chromadb" },
-    { name = "cryptography" },
-    { name = "fonttools" },
-    { name = "httpx" },
-    { name = "inflection" },
-    { name = "junit2html" },
-    { name = "junitparser" },
-    { name = "mcp" },
-    { name = "nest-asyncio" },
-    { name = "opentelemetry-proto" },
-    { name = "pillow" },
-    { name = "playwright" },
-    { name = "playwright-recaptcha" },
-    { name = "portkey-ai" },
-    { name = "protobuf" },
-    { name = "psutil" },
-    { name = "pydantic" },
-    { name = "pypdf" },
-    { name = "python-dotenv" },
-    { name = "python-json-logger" },
-    { name = "pyyaml" },
-    { name = "requests" },
-    { name = "sentence-transformers" },
-    { name = "sentry-sdk" },
-    { name = "sqlalchemy" },
-    { name = "starlette" },
-    { name = "torch" },
-    { name = "transformers" },
-    { name = "unstructured", extra = ["all-docs"] },
-    { name = "urllib3" },
-]
-
-[package.dev-dependencies]
-dev = [
-    { name = "black" },
-    { name = "coverage" },
-    { name = "deptry" },
-    { name = "gitchangelog" },
-    { name = "ipdb" },
-    { name = "isort" },
-    { name = "mkdocs" },
-    { name = "mypy" },
-    { name = "pytest" },
-    { name = "pytest-cov" },
-    { name = "pytest-rerunfailures" },
-    { name = "twine" },
-]
-
-[package.metadata]
-requires-dist = [
-    { name = "ag2", extras = ["lmm", "mcp", "openai", "groq", "bedrock", "anthropic", "gemini"], specifier = ">=0.10.0,<0.11" },
-    { name = "aiofiles", specifier = ">=24.1.0,<25" },
-    { name = "aiohttp", specifier = ">=3.13.2,<4" },
-    { name = "chromadb", specifier = ">=1.0.16,<2" },
-    { name = "cryptography", specifier = ">=46.0.5,<47" },
-    { name = "fonttools", specifier = ">=4.61.0,<5" },
-    { name = "httpx", specifier = ">=0.28.1,<0.29" },
-    { name = "inflection", specifier = ">=0.5.1,<0.6" },
-    { name = "junit2html", specifier = ">=31.0.2,<32" },
-    { name = "junitparser", specifier = ">=3.2.0,<4" },
-    { name = "mcp", specifier = ">=1.23.3,<2" },
-    { name = "nest-asyncio", specifier = ">=1.6.0,<2" },
-    { name = "opentelemetry-proto", specifier = ">=1.27.0" },
-    { name = "pillow", specifier = ">=12.1.1,<13" },
-    { name = "playwright", specifier = "<=1.49.0" },
-    { name = "playwright-recaptcha", specifier = ">=0.5.1,<0.6" },
-    { name = "portkey-ai", specifier = ">=1.11.1,<2" },
-    { name = "protobuf", specifier = ">=6.33.5,<7" },
-    { name = "psutil", specifier = ">=5.9.0,<6" },
-    { name = "pydantic", specifier = ">=2.6.2,<3" },
-    { name = "pypdf", specifier = ">=6.7.5,<7" },
-    { name = "python-dotenv", specifier = ">=1.0.0,<2" },
-    { name = "python-json-logger", specifier = ">=2.0.7,<3" },
-    { name = "pyyaml", specifier = ">=6.0.1,<7" },
-    { name = "requests", specifier = ">=2.32.5,<3" },
-    { name = "sentence-transformers", specifier = ">=3.4.1,<4" },
-    { name = "sentry-sdk", specifier = ">=2.18.0,<3" },
-    { name = "sqlalchemy", specifier = ">=2.0.36,<3" },
-    { name = "starlette", specifier = ">=0.50.0,<0.51" },
-    { name = "torch", specifier = ">=2.9.1,<3" },
-    { name = "transformers", specifier = ">=4.57.3,<5" },
-    { name = "unstructured", extras = ["all-docs"], specifier = ">=0.18.18,<0.19" },
-    { name = "urllib3", specifier = ">=2.6.1,<3" },
-]
-
-[package.metadata.requires-dev]
-dev = [
-    { name = "black", specifier = ">=24.10.0,<25" },
-    { name = "coverage", specifier = ">=7.6.4,<8" },
-    { name = "deptry", specifier = ">=0.21.0,<0.22" },
-    { name = "gitchangelog", specifier = ">=3.0.4,<4" },
-    { name = "ipdb", specifier = ">=0.13.13,<0.14" },
-    { name = "isort", specifier = ">=5.13.2,<6" },
-    { name = "mkdocs", specifier = ">=1.6.1,<2" },
-    { name = "mypy", specifier = ">=1.13.0,<2" },
-    { name = "pytest", specifier = ">=8.3.3,<9" },
-    { name = "pytest-cov", specifier = ">=6.0.0,<7" },
-    { name = "pytest-rerunfailures", specifier = ">=15.0,<16" },
-    { name = "twine", specifier = ">=5.1.1,<6" },
 ]
 
 [[package]]

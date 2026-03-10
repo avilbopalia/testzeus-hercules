@@ -1,7 +1,7 @@
 import os
 import pytest
 from typing import Generator
-from testzeus_hercules.config import SingletonConfigManager, set_global_conf, get_global_conf
+from smart_ai_tester.config import SingletonConfigManager, set_global_conf, get_global_conf
 
 
 class TestCertificateErrors:

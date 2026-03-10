@@ -1,4 +1,4 @@
-# TestZeus Hercules Project Structure Guide
+# SmartAITester Project Structure Guide
 
 ## Single Test Mode (Non-Bulk)
 When `EXECUTE_BULK=false` (default), Hercules uses `opt` as the project base directory:
@@ -89,39 +89,39 @@ Hercules will process each test directory sequentially, maintaining separate log
 
 1. Install the package:
 ```bash
-pip install testzeus-hercules
+pip install smart-ai-tester
 playwright install --with-deps
 ```
 
 2. Run a test with basic options:
 ```bash
-testzeus-hercules --project-base=opt
+smart-ai-tester --project-base=opt
 ```
 
 Or with individual parameters:
 ```bash
-testzeus-hercules --input-file opt/input/test.feature --output-path opt/output --test-data-path opt/test_data
+smart-ai-tester --input-file opt/input/test.feature --output-path opt/output --test-data-path opt/test_data
 ```
 
 3. LLM Configuration Options:
 
 ```bash
 # Basic LLM configuration
-testzeus-hercules --llm-model gpt-4o --llm-model-api-key your-api-key
+smart-ai-tester --llm-model gpt-4o --llm-model-api-key your-api-key
 
 # Advanced LLM configuration
-testzeus-hercules --llm-model claude-3-opus-20240229 \
+smart-ai-tester --llm-model claude-3-opus-20240229 \
                   --llm-model-api-key your-api-key \
                   --llm-model-api-type anthropic \
                   --llm-model-base-url https://api.anthropic.com \
                   --llm-temperature 0.0
 
 # LLM configuration file
-testzeus-hercules --agents-llm-config-file ./agents_llm_config.json \
+smart-ai-tester --agents-llm-config-file ./agents_llm_config.json \
                   --agents-llm-config-file-ref-key openai
 
 # Portkey integration
-testzeus-hercules --enable-portkey \
+smart-ai-tester --enable-portkey \
                   --portkey-api-key your-portkey-api-key \
                   --portkey-strategy fallback
 ```
@@ -130,25 +130,25 @@ testzeus-hercules --enable-portkey \
 
 ```bash
 # Browser selection
-testzeus-hercules --browser-channel chrome-beta \
+smart-ai-tester --browser-channel chrome-beta \
                   --browser-version 115.0.1 \
                   --browser-path /path/to/chrome
 
 # Browser extensions
-testzeus-hercules --enable-ublock
+smart-ai-tester --enable-ublock
 ```
 
 5. Other Options:
 
 ```bash
 # Bulk execution
-testzeus-hercules --bulk
+smart-ai-tester --bulk
 
 # Vector DB reuse
-testzeus-hercules --reuse-vector-db
+smart-ai-tester --reuse-vector-db
 
 # Screen sharing
-testzeus-hercules --auto-accept-screen-sharing
+smart-ai-tester --auto-accept-screen-sharing
 ```
 
 ## Detailed Run Instructions
@@ -165,7 +165,7 @@ cp your-test-data.json opt/test_data/
 
 2. Run a single test:
 ```bash
-testzeus-hercules --project-base=opt
+smart-ai-tester --project-base=opt
 ```
 
 Expected outcome:
@@ -189,7 +189,7 @@ cp test2.feature opt/tests/test2/input/
 
 3. Run all tests:
 ```bash
-testzeus-hercules --project-base=opt
+smart-ai-tester --project-base=opt
 ```
 
 Expected outcome:
@@ -414,15 +414,15 @@ When Portkey is enabled, all LLM requests are routed through the Portkey gateway
 
 1. Pull the image:
 ```bash
-docker pull testzeus/hercules:latest
+docker pull smartaitester/smart-ai-tester:latest
 ```
 
 2. Run with environment file:
 ```bash
 docker run --env-file=.env \
-  -v ./agents_llm_config.json:/testzeus-hercules/agents_llm_config.json \
-  -v ./opt:/testzeus-hercules/opt \
-  --rm -it testzeus/hercules:latest
+  -v ./agents_llm_config.json:/smart-ai-tester/agents_llm_config.json \
+  -v ./opt:/smart-ai-tester/opt \
+  --rm -it smartaitester/smart-ai-tester:latest
 ```
 
 #### Non-Bulk Mode (Default)
@@ -436,9 +436,9 @@ cp your-test-data.json opt/test_data/
 2. Run the container:
 ```bash
 docker run --env-file=.env \
-  -v ./agents_llm_config.json:/testzeus-hercules/agents_llm_config.json \
-  -v ./opt:/testzeus-hercules/opt \
-  --rm -it testzeus/hercules:latest
+  -v ./agents_llm_config.json:/smart-ai-tester/agents_llm_config.json \
+  -v ./opt:/smart-ai-tester/opt \
+  --rm -it smartaitester/smart-ai-tester:latest
 ```
 
 Important Note: Docker runs are always in headless mode (no visible browser). To connect to a visible browser, you'll need to use the CDP_ENDPOINT_URL environment variable to connect to an external browser instance.
@@ -460,9 +460,9 @@ mkdir -p opt/tests/test2/input opt/tests/test2/test_data
 3. Run the container:
 ```bash
 docker run --env-file=.env \
-  -v ./agents_llm_config.json:/testzeus-hercules/agents_llm_config.json \
-  -v ./opt:/testzeus-hercules/opt \
-  --rm -it testzeus/hercules:latest
+  -v ./agents_llm_config.json:/smart-ai-tester/agents_llm_config.json \
+  -v ./opt:/smart-ai-tester/opt \
+  --rm -it smartaitester/smart-ai-tester:latest
 ```
 
 Expected outcome:

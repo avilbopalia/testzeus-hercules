@@ -1,6 +1,6 @@
 # Environment Variables and Configuration Guide
 
-This document provides a comprehensive guide to all environment variables and configuration options available in TestZeus Hercules.
+This document provides a comprehensive guide to all environment variables and configuration options available in SmartAITester.
 
 ## Table of Contents
 - [Core Environment Variables](#core-environment-variables)
@@ -348,8 +348,8 @@ LLM Parameters:
   - Example (JSON string): `{"mcpServers": {"server_name": {"transport": "streamable-http", "url": "https://mcp.composio.dev/composio/server/<SERVER_UUID>/mcp?user_id=<USER_EMAIL>"}}}`
   - Implementation: If a path ending with `.json` is provided, Hercules attempts to load it from:
     - The current working directory
-    - Relative to `testzeus_hercules/`
-    - Relative to `testzeus_hercules/config.py` location
+    - Relative to `smart_ai_tester/`
+    - Relative to `smart_ai_tester/config.py` location
     Otherwise, it treats the value as a JSON string.
 
 - `MCP_TIMEOUT`: MCP read timeout in seconds

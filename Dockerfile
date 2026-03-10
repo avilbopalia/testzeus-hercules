@@ -22,10 +22,10 @@ RUN apt-get update && apt-get install -y \
     && rm -rf /var/lib/apt/lists/*
 
 # Set the working directory in the container
-WORKDIR /testzeus-hercules
+WORKDIR /smart-ai-tester
 
 # Copy the project files (needed for building the local package)
-COPY . /testzeus-hercules
+COPY . /smart-ai-tester
 
 # Install UV
 RUN pip install uv
@@ -37,7 +37,7 @@ RUN uv sync --frozen --no-dev
 RUN uv run playwright install
 
 # Make entrypoint executable
-RUN chmod +x /testzeus-hercules/entrypoint.sh
+RUN chmod +x /smart-ai-tester/entrypoint.sh
 
 # Define the entrypoint
-ENTRYPOINT ["/testzeus-hercules/entrypoint.sh"]
+ENTRYPOINT ["/smart-ai-tester/entrypoint.sh"]

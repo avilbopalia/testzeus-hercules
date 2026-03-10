@@ -45,7 +45,7 @@ def test_feature_execution(feature_folder: str) -> None:
     # Execute Hercules with the updated .env file
     try:
         result = subprocess.run(
-            ["uv", "run", "python", "-m", "testzeus_hercules"],
+            ["uv", "run", "python", "-m", "smart_ai_tester"],
             check=True,
             capture_output=True,
             text=True,
@@ -60,10 +60,10 @@ def test_feature_execution(feature_folder: str) -> None:
         print(f"Subprocess failed with return code {e.returncode}")
         print(f"Standard Output:\n{e.stdout}")
         print(f"Standard Error:\n{e.stderr}")
-        assert False, f"Hercules execution failed for {feature_folder}"
+        assert False, f"SmartAITester execution failed for {feature_folder}"
 
-    # assert on result.returncode == 0, f"Hercules execution failed for {feature_folder}"
-    assert result.returncode == 0, f"Hercules execution failed for {feature_folder}"
+    # assert on result.returncode == 0, f"SmartAITester execution failed for {feature_folder}"
+    assert result.returncode == 0, f"SmartAITester execution failed for {feature_folder}"
 
     # Compare results
     expected_file = os.path.join(feature_path, "expected_results.txt")
