@@ -118,14 +118,18 @@ publish:          ## Publish the package to PyPI.
 	@pip install twine
 	@twine upload dist/*
 
+# Detect Homebrew SSL cert bundle (macOS with corporate proxy). Falls back to system default on Linux.
+HOMEBREW_CERT := /opt/homebrew/etc/openssl@3/cert.pem
+SSL_ENV := $(if $(wildcard $(HOMEBREW_CERT)),SSL_CERT_FILE=$(HOMEBREW_CERT) REQUESTS_CA_BUNDLE=$(HOMEBREW_CERT),)
+
 .PHONY: run
 run:       ## run testzeus_hercules.
-	uv run python testzeus_hercules
+	$(SSL_ENV) ENABLE_UBLOCK_EXTENSION=false uv run python testzeus_hercules
 
 
 .PHONY: run-interactive
 run-interactive:       ## run-interactive testzeus_hercules.
-	uv run python -m testzeus_hercules.interactive
+	$(SSL_ENV) uv run python -m testzeus_hercules.interactive
 
 .PHONY: setup-uv
 setup-uv:       ## setup uv.

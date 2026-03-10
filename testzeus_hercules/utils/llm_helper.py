@@ -157,6 +157,7 @@ def convert_model_config_to_autogen_format(
         "api_key": model_config.get("api_key") or model_config.get("model_api_key"),
         "base_url": model_config.get("base_url") or model_config.get("model_base_url"),
         "api_type": model_config.get("api_type") or model_config.get("model_api_type"),
+        "api_version": model_config.get("api_version") or model_config.get("model_api_version"),
     }
     
     # Remove None values
